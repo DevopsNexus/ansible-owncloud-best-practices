@@ -1,0 +1,6 @@
+---
+- hosts: webservers
+  roles:
+    - httpd
+    - php
+    - owncloud

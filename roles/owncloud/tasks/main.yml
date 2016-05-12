@@ -1,0 +1,14 @@
+---
+- name: install additional tools
+  yum: name=bzip2 state=installed
+
+- name: set selinux permissive
+  selinux: policy=targeted state=permissive
+
+- name: get the owncloud tar
+  get_url: url=https://download.owncloud.org/community/owncloud-9.0.1.tar.bz2 dest=/var/www/html
+    
+- name: exract the tar
+  unarchive: src=/var/www/html/owncloud-9.0.1.tar.bz2 dest=/var/www/html copy=no owner=apache
+  notify:
+  - restart apache

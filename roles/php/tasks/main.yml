@@ -1,0 +1,12 @@
+---
+- name: install php and libs
+  yum: name={{ item }} state=installed
+  with_items:
+    - php-xml
+    - php
+    - php-zip
+    - php-mbstring
+    - php-mysqlnd
+    - php-gd
+  notify:
+  - restart apache
