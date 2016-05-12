@@ -12,3 +12,8 @@
   unarchive: src=/var/www/html/owncloud-9.0.1.tar.bz2 dest=/var/www/html copy=no owner=apache
   notify:
   - restart apache
+
+- name: set the apache config
+  template: src=owncloud.conf.j2 dest=/etc/httpd/conf.d/owncloud.conf
+  notify:
+  - restart apache
