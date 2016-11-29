@@ -1,4 +1,4 @@
 ---
 - name: install httpd
-  yum: name=httpd state=installed
+  dnf: name=httpd state=installed
 
