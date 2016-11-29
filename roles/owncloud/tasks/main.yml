@@ -1,6 +1,6 @@
 ---
 - name: install additional tools
-  yum: name=bzip2 state=installed
+  dnf: name=bzip2 state=installed
 
 - name: set selinux permissive
   selinux: policy=targeted state=permissive
