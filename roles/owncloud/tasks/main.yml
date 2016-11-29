@@ -1,6 +1,9 @@
 ---
 - name: install additional tools
   dnf: name=bzip2 state=installed
+  
+- name: install selinux tools
+  dnf: name=libselinux-python state=installed  
 
 - name: set selinux permissive
   selinux: policy=targeted state=permissive
